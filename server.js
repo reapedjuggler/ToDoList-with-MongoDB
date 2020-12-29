@@ -19,12 +19,12 @@ mongoose.connect(process.env.DB_CONNECT, {
 );
 
 app.set('view engine', 'ejs');
- 
-app.use(express.json()); 
-app.use(express.urlencoded({ 
+
+app.use(express.json());
+app.use(express.urlencoded({
     extended: true,
-})); 
- 
+}));
+
 // Static Files
 app.use('/', express.static(path.join(__dirname, 'public')));
 
@@ -35,18 +35,25 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 // To Render the list
 app.get('/', (req, res, next) => {
 
+
+
     TodoTask.find({}, (err, tasks) => {
-        res.render("todo.ejs", {
+        console.log(" im task\n", tasks);
+        res.render("index.ejs", {
             todoTasks: tasks
         });
-        res.render('index.ejs');
+        // res.render('index.ejs');
     });
 
 });
 
 app.post('/', async (req, res, next) => {
-  
+
     console.log("iam the body\n", req.body);
+
+    const todoTask = new TodoTask({
+        content: req.body.content
+    });
 
     try {
         await todoTask.save();

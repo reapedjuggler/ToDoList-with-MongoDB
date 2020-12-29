@@ -162,15 +162,27 @@
             </form>
 
             <ul class="todo-list">
+
+                <% todoTasks.forEach(itr => { %>
+
+                <% console.log(itr, " val\n") %>
+
                 <li class="todo-list-item">
-                    <div class="todo-list-item-name"> Hello </div>
-                    <a href="" class="edit">
+
+                    <div class="todo-list-item-name"> <%= itr.content%> </div>
+
+                    <a href="/edit/<%= itr._id %>" class="edit">
                         <span class="fas fa-edit"></span>
                     </a>
-                    <a href="" class="remove">
-                        <span class="fas fa-times"></span>
+
+                    <a href="/remove/<%= itr._id %>" class="remove">
+                        <span class=    "fas fa-times"></span>
                     </a>
+
                 </li>
+
+                <% }) %>
+
             </ul>
 
         </div>
