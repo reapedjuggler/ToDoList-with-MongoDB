@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
+const TodoTask = require("./models/TodoTask");
 
 dotenv.config();
 
@@ -17,26 +18,30 @@ mongoose.connect(process.env.DB_CONNECT, {
     }
 );
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 app.use(express.json());
 app.use(express.urlencoded({
-    extended: true
+    extended: true,
 }));
-
 
 // Static Files
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-/* For refactoring the code once the basic version is completed */
-// app.use('/api', require('./routes/api').route);
-
-
 // To Render the list
 app.get('/', (req, res, next) => {
-    res.render('index.ejs');
-})
+
+    TodoTask.find({}, (err, tasks) => {
+        res.render("index.ejs", {
+            todoTasks: tasks
+        });
+    });
+
+});
+
+app.use('/api', require('./routes/api').route);
+
 
 app.listen(8000, (req, res, next) => {
-    console.log("Server started on https://localhost:800")
+    console.log("Server started on https://localhost:8000");
 });

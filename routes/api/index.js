@@ -1,21 +1,11 @@
-// const route = require('express').Router();
+const route = require('express').Router();
 
-// route.use('/addTodo', require('./addTodo').route);
+route.use('/addTodo', require('./addTodo').route);
+route.use('/deleteTodo', require('./deleteTodo').route);
+route.use('/updateTodo', require('./updateTodo').route);
 
 
+exports = module.exports = {
+    route,
+};
 
-// exports = module.exports = {
-//     route,
-// };
-
-// // const todoTaskSchema = new mongoose.Schema({
-// //     content: {
-// //         type: String,
-// //         required: true
-// //     },
-// //     date: {
-// //         type: Date,
-// //         default: Date.now
-// //     }
-// // })
-// // module.exports = mongoose.model('TodoTask', todoTaskSchema);
