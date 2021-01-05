@@ -151,7 +151,7 @@
 
         <div class="todo">
 
-            <form action="/" method="POST" class="todo-header">
+            <form action="/api/addTodo" method="POST" class="todo-header">
 
                 <input type="text" name="content" class="todoBox">
 
@@ -165,18 +165,16 @@
 
                 <% todoTasks.forEach(itr => { %>
 
-                <% console.log(itr, " val\n") %>
-
                 <li class="todo-list-item">
 
                     <div class="todo-list-item-name"> <%= itr.content%> </div>
 
-                    <a href="/edit/<%= itr._id %>" class="edit">
+                    <a href="/api/updateTodo/edit/<%= itr._id %>" class="edit">
                         <span class="fas fa-edit"></span>
                     </a>
 
-                    <a href="/remove/<%= itr._id %>" class="remove">
-                        <span class=    "fas fa-times"></span>
+                    <a href="/api/deleteTodo/remove/<%= itr._id %>" class="remove">
+                        <span class= "fas fa-times"></span>
                     </a>
 
                 </li>

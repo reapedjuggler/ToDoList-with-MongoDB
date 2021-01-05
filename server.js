@@ -28,42 +28,19 @@ app.use(express.urlencoded({
 // Static Files
 app.use('/', express.static(path.join(__dirname, 'public')));
 
-/* For refactoring the code once the basic version is completed */
-// app.use('/api', require('./routes/api').route);
-
-
 // To Render the list
 app.get('/', (req, res, next) => {
 
-
-
     TodoTask.find({}, (err, tasks) => {
-        console.log(" im task\n", tasks);
         res.render("index.ejs", {
             todoTasks: tasks
         });
-        // res.render('index.ejs');
     });
 
 });
 
-app.post('/', async (req, res, next) => {
+app.use('/api', require('./routes/api').route);
 
-    console.log("iam the body\n", req.body);
-
-    const todoTask = new TodoTask({
-        content: req.body.content
-    });
-
-    try {
-        await todoTask.save();
-        res.redirect('/');
-
-    } catch (err) {
-        res.redirect('/');
-    }
-
-});
 
 app.listen(8000, (req, res, next) => {
     console.log("Server started on https://localhost:8000");
