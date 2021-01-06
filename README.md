@@ -3,7 +3,7 @@
 </br>
 
 * **Pre-Requisites**
-----
+
   `Node.js`
   `Express.js`
   `MongoDB`
@@ -20,7 +20,6 @@
 </br>
 
 * **Setting Up**
-----  
     
 * **Download the essential node modules**</br>
     <pre>npm install</pre></br>
