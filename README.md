@@ -1,20 +1,11 @@
 * **A TodoList web-app created with `express.js` and `MongoDB`**
 ----
-</br>
 
-* **Pre-Requisites**
+* **Pre-Requisites**<br>
   `Node.js`
   `Express.js`
   `MongoDB`
   `JavaScript, HTML` 
-
-</br>
-
-</br>
-
-* **View**
-
-</br>
 
 * **Setting Up**
 * **Download the essential node modules**</br>
