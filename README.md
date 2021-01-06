@@ -11,7 +11,8 @@
     <br>Download the essential node modules
     <pre>npm install</pre>
     
-    <h3>Download and setup MongoDB</h3>
+    Download and setup MongoDB</h3>
+    
     [MongoDB](https://www.mongodb.com/)
    
     <br>Start the Server</h3></br>
