@@ -8,10 +8,12 @@
   `JavaScript, HTML` 
 
 * **Setting Up**
-* **Download the essential node modules**</br>
-    <pre>npm install</pre></br>
-* **Download and setup MongoDB**</br>
-     [MongoDB](https://www.mongodb.com/)</br>
-</br>**Start the Server**</br>
-<pre>npm start server.js </pre>
+    <br>Download the essential node modules
+    <pre>npm install</pre>
+    
+    <h3>Download and setup MongoDB</h3>
+    [MongoDB](https://www.mongodb.com/)
+   
+    <br>Start the Server</h3></br>
+    <pre>npm start server.js </pre>
   
